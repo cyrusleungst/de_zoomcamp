@@ -1,0 +1,56 @@
+###
+### A complete description of a Prefect Deployment for flow 'etl-parent-flow'
+###
+name: gcs-to-bq
+description: null
+version: 8bf8dfe516346f07c2c7c456594bfe11
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+tags: []
+parameters: { "months": [2, 3], "colour": "yellow", "year": 2019 }
+schedule: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: etl-parent-flow
+manifest_path: null
+storage: null
+path: /Users/cyrus/development/de_zoomcamp/week_2/homework
+entrypoint: etl_gcs_to_bq.py:etl_parent_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    months:
+      title: months
+      default:
+        - 1
+        - 2
+      position: 0
+      type: array
+      items:
+        type: string
+    year:
+      title: year
+      default: 2021
+      position: 1
+      type: integer
+    colour:
+      title: colour
+      default: yellow
+      position: 2
+      type: string
+  required: null
+  definitions: null
