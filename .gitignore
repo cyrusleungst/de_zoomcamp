@@ -16,3 +16,4 @@ serving_dir
 *.json
 week_2/data
 prefect.api.key
+*.gz
