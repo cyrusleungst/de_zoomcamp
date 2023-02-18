@@ -8,12 +8,11 @@ def etl_parent_flow(project: str = "de-zoomcamp-377022",dataset: str = "trips_da
     bq_warehouse_block = BigQueryWarehouse.load("zoom-bq")
 
     operation = f"""
-    CREATE OR REPLACE EXTERNAL TABLE `{project}.{dataset}.fhv_rides`
+    CREATE OR REPLACE EXTERNAL TABLE `{project}.{dataset}.fhv_rides_ext`
     OPTIONS (
         format = 'CSV',
         uris = ['gs://dtc_data_lake_de-zoomcamp-377022/data/fhv/*']
     )
-
     """
 
     bq_warehouse_block.execute(operation)
