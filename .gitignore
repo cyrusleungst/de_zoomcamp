@@ -17,3 +17,14 @@ serving_dir
 week_2/data
 prefect.api.key
 *.gz
+# Default .gitignore content added by dbt Cloud
+target/
+dbt_packages/
+logs/
+# end dbt Cloud content
+
+# Default .gitignore content added by dbt Cloud
+target/
+dbt_packages/
+logs/
+# end dbt Cloud content
