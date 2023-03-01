@@ -77,6 +77,7 @@ def etl_parent_flow(months: list[str] = [1, 2], years: list[int] = [2021, 2022],
             etl_web_to_gcs(year, month, colour, schemas)
 
 
+
 if __name__ == "__main__":
     months = list(range(9, 13))
     years = [2020]
