@@ -38,7 +38,7 @@ def write_local(df: pd.DataFrame, dataset_file: str, colour: str) -> Path:
         print(f"Creating {parent_dir}")
 
     df.to_parquet(path, engine="pyarrow")
-    
+
     return path
 
 
@@ -68,6 +68,7 @@ def etl_web_to_gcs(year: int, month: int, colour: str, schemas: dict) -> None:
     gcs_path = Path(f"data/{colour}/{dataset_file}.parquet")
     write_gcs(path, gcs_path)
 
+
 @flow(name="NY Taxi data to GCS")
 def etl_parent_flow(months: list[str] = [1, 2], years: list[int] = [2021, 2022], colour: str = "yellow") -> None:
     schemas = load_schemas()
@@ -75,8 +76,9 @@ def etl_parent_flow(months: list[str] = [1, 2], years: list[int] = [2021, 2022],
         for month in months:
             etl_web_to_gcs(year, month, colour, schemas)
 
-if __name__ == '__main__':
-    months=list(range(9, 13))
-    years=[2020]
+
+if __name__ == "__main__":
+    months = list(range(9, 13))
+    years = [2020]
     colour = "green"
     etl_parent_flow(months, years, colour)
