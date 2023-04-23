@@ -1,2 +1,2 @@
-# de_zoomcamp
+# DE Zoomcamp
 Data Engineering Zoomcamp 2023
